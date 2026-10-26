@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchRandomGifs, fetchQueryGifs } from '../services/giphyService';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
-import { Button, Card, Form, Toast, ToastContainer } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
@@ -14,7 +14,6 @@ function Home() {
 	const [input, setInput] = useState<string>();
 	const [gifs, setGifs] = useState<any[]>([]);
 	const query = searchParams.get("search") ?? "";
-	const navigate = useNavigate();
 
 	console.log(query, "query");
 
