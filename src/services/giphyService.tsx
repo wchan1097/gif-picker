@@ -1,7 +1,8 @@
 // MARK: FUNCTION = fetchQueryGifs
 export async function fetchQueryGifs(
 	query: string,
-	limit: number = 3, 
+	limit: number = 16,
+	offset: number = 0, 
 	controller?: AbortController
 ): Promise<any[]> {
 	if (!query.length) return [];
@@ -12,7 +13,7 @@ export async function fetchQueryGifs(
 	params.append("api_key", import.meta.env.VITE_GIPHY_API_KEY);
 	params.append("q", query);
 	params.append("limit", limit.toString());
-	params.append("offset", "0");
+	params.append("offset", offset.toString());
 	params.append("rating", "g");
 	params.append("lang", "en");
 	params.append("bundle", "messaging_non_clips");
