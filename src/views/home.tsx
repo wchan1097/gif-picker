@@ -17,7 +17,7 @@ function Home() {
 	// URL PROCESSING
 	const [searchParams, setSearchParams] = useSearchParams();
 	const query = searchParams.get("search") ?? "";
-	const urlPage = searchParams.get("p") ?? "";
+	const urlPage = searchParams.get("p") ?? "1";
 
 	const [input, setInput] = useState<string>(query);
 	const [gifs, setGifs] = useState<any[]>([]);
@@ -78,8 +78,6 @@ function Home() {
 		
 		return () => controller.abort();
 	}, [query, page]);
-
-	console.log(gifs);
 
 	// MARK: START RETURN 
   return (
