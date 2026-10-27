@@ -88,7 +88,7 @@ function Home() {
 				<h3 className='fs-5 text-secondary'>Hi There! 👋</h3>
 				<h1 className=" fs-3 mb-3">Welcome to Gif Picker</h1>
 
-				<p>Type in the search bar below, then wait. Your GIFs will appear shortly.</p>
+				<p>Type in the search bar below and then wait. Your GIFs will appear shortly.</p>
 
 				{/* MARK: GIF SEARCH FORM */}
 				<Form>
