@@ -50,13 +50,7 @@ function Home() {
 		if (input == query) return;
 
 		const timeoutId = setTimeout(
-		() => {
-				setQuery(input);
-				setPage(1);
-				const params = new URLSearchParams();
-				params.set("search", input);
-				window.history.pushState(null, "", `${window.location.pathname}?${params}`);
-			}, 
+			() => navigate(), 
 			1500
 		);
 
@@ -89,7 +83,15 @@ function Home() {
 
 	function handleFormSubmission(event: React.FormEvent<HTMLFormElement>): void {
 		event.preventDefault();
-		// setSearchParams({search: input})
+		navigate();
+	}
+
+	function navigate(): void {
+		setQuery(input);
+		setPage(1);
+		const params = new URLSearchParams();
+		params.set("search", input);
+		window.history.pushState(null, "", `${window.location.pathname}?${params}`);
 	}
 
 	// MARK: START RETURN 
