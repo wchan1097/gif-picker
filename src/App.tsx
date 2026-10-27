@@ -154,7 +154,6 @@ function Home() {
 											<GifCard 
 												gifModel={gifModel} 
 												key={`${gifIndex}-${gifData.id}`}
-												gifCardClasses='d-flex flex-basis'
 											/>
 										)
 									})

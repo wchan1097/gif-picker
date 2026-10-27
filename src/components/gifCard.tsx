@@ -3,13 +3,11 @@ import "../App.css";
 
 interface GifCardProps {
 	gifModel: GifModel,
-	key: string,
-	gifCardClasses?: string
+	key: string
 }
 
 function GifCard ({
-	gifModel,
-	gifCardClasses
+	gifModel
 }: GifCardProps) {
 	const gifImageData = gifModel.image;
 	// const [showToast, setShowToast] = useState<boolean>(false);
