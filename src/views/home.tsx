@@ -79,10 +79,12 @@ function Home() {
 		return () => controller.abort();
 	}, [query, page]);
 
+	console.log(gifs);
+
 	// MARK: START RETURN 
   return (
     <>
-			<main style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 20px"}} className='my-5'>	
+			<main style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 20px"}} className='py-5'>	
 				<h3 className='fs-5 text-secondary'>Hi There! 👋</h3>
 				<h1 className=" fs-3 mb-3">Welcome to Gif Picker</h1>
 
@@ -131,9 +133,9 @@ function Home() {
 								const gifModel: GifModel = {
 									"web_url": gifData.url, 
 									"image": {
-										"height": gifData.images.fixed_height.height,
-										"width": gifData.images.fixed_height.width,
-										"url": gifData.images.fixed_height.mp4
+										"height": gifData.images.fixed_height_small.height,
+										"width": gifData.images.fixed_height_small.width,
+										"url": gifData.images.fixed_height_small.mp4
 									}
 								}
 								return (
