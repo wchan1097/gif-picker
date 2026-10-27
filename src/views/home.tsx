@@ -131,9 +131,9 @@ function Home() {
 								const gifModel: GifModel = {
 									"web_url": gifData.url, 
 									"image": {
-										"height": gifData.images.fixed_height_small.height,
-										"width": gifData.images.fixed_height_small.width,
-										"url": gifData.images.fixed_height_small.mp4
+										"height": gifData.images.fixed_height.height,
+										"width": gifData.images.fixed_height.width,
+										"url": gifData.images.fixed_height.mp4
 									}
 								}
 								return (
