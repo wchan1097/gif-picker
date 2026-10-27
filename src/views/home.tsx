@@ -160,7 +160,7 @@ function Home() {
 						</Pagination>
 					</section>
 					) 
-				};
+				}
 			</main>
     </>
   )
