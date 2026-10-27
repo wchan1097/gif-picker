@@ -34,7 +34,7 @@ many as you feel comfortable.
 - Implementation is built using Typescript. ✅
 - An alert is shown once a GIF URL is copied. ✅
 - A user should get results shortly after they're finished typing. ✅
-- A user should be able to cycle through many GIFs for each search query.
+- A user should be able to cycle through many GIFs for each search query. ✅
 - A user should be alerted when the API limit is reached.
 - A user should be able to see previous results even after the API limit is reached.
 - A user should be able to see 3 random gifs before searching. ✅
