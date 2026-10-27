@@ -132,7 +132,7 @@ function Home() {
 								style={{
 									display: "grid", 
 									gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-									gap: "10px"
+									gap: "15px"
 								}}
 							>
 								{
