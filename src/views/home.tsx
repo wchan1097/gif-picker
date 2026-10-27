@@ -79,6 +79,11 @@ function Home() {
 		return () => controller.abort();
 	}, [query, page]);
 
+	function handleFormSubmission(event: React.FormEvent<HTMLFormElement>): void {
+		event.preventDefault();
+		setSearchParams({search: input})
+	}
+
 	// MARK: START RETURN 
   return (
     <>
@@ -89,7 +94,7 @@ function Home() {
 				<p>Type in the search bar below and then wait. Your GIFs will appear shortly.</p>
 
 				{/* MARK: GIF SEARCH FORM */}
-				<Form>
+				<Form onSubmit={handleFormSubmission}>
 					<div className='d-flex gap-3 align-items-end'>
 						<Form.Group className='flex-grow-1'>
 							<Form.Control 
@@ -119,47 +124,54 @@ function Home() {
 						}
 					</h2>
 
-					<div 
-						style={{
-							display: "grid", 
-							gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-							gap: "10px"
-						}}
-					>
-						{
-							gifs.map((gifData, gifIndex) => {
-								const gifModel: GifModel = {
-									"web_url": gifData.url, 
-									"image": {
-										"height": gifData.images.fixed_height.height,
-										"width": gifData.images.fixed_height.width,
-										"url": gifData.images.fixed_height.mp4
-									}
+					{
+						!gifs.length ? (
+							<p>No gifs found.</p>
+						) : (
+							<div 
+								style={{
+									display: "grid", 
+									gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+									gap: "10px"
+								}}
+							>
+								{
+									gifs.map((gifData, gifIndex) => {
+										const gifModel: GifModel = {
+											"web_url": gifData.url, 
+											"image": {
+												"height": gifData.images.fixed_height.height,
+												"width": gifData.images.fixed_height.width,
+												"url": gifData.images.fixed_height.mp4
+											}
+										}
+										return (
+											<GifCard 
+												gifModel={gifModel} 
+												key={`${gifIndex}-${gifData.id}`}
+												gifCardClasses='d-flex flex-basis'
+											/>
+										)
+									})
 								}
-								return (
-									<GifCard 
-										gifModel={gifModel} 
-										key={`${gifIndex}-${gifData.id}`}
-										gifCardClasses='d-flex flex-basis'
-									/>
-								)
-							})
-						}
-					</div>
+							</div>
+						)
+					}
 				</section>
 
 				{/* MARK: PAGINATION */}
-				{ (query) && (
-					<section className='d-flex justify-content-center mt-5'>
-						<Pagination>
-							<Pagination.Prev linkClassName='bg-dark text-light' disabled={page - 1 === 0} href={`?search=${input}&p=${page - 1}`}/>
-							<Pagination.Item linkClassName='bg-dark text-light' disabled>
-								Page {page}
-							</Pagination.Item>
-							<Pagination.Next linkClassName='bg-dark text-light' href={`?search=${input}&p=${page + 1}`}/>
-						</Pagination>
-					</section>
-					) 
+				{ 
+					(query && gifs.length) ? (
+						<section className='d-flex justify-content-center mt-5'>
+							<Pagination>
+								<Pagination.Prev linkClassName='bg-dark text-light' disabled={page - 1 === 0} href={`?search=${input}&p=${page - 1}`}/>
+								<Pagination.Item linkClassName='bg-dark text-light' disabled>
+									Page {page}
+								</Pagination.Item>
+								<Pagination.Next linkClassName='bg-dark text-light' href={`?search=${input}&p=${page + 1}`}/>
+							</Pagination>
+						</section>
+					) : ''
 				}
 			</main>
     </>
