@@ -1,0 +1,20 @@
+* {
+	font-family: "Gill Sans", sans-serif;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: linear-gradient(to bottom right, #303c4c 35%, #010102);
+	min-height: 100vh;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	color: white;
+}
+
+.btn-outline-white {
+	border: 2px solid white;
+	color: white;
+	border-radius: 5px;
+	padding: 6px 8px;
+}

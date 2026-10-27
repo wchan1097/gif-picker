@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import { Toast, ToastContainer } from 'react-bootstrap';
 import type GifModel from '../models/gifModel';
+import "../App.css";
 
 interface GifCardProps {
 	gifModel: GifModel,
@@ -13,22 +12,25 @@ function GifCard ({
 	gifCardClasses
 }: GifCardProps) {
 	const gifImageData = gifModel.image;
-	const [showToast, setShowToast] = useState<boolean>(false);
+	// const [showToast, setShowToast] = useState<boolean>(false);
 
 	async function copyGif (gifUrl: string): Promise<void> {
 		try {
 			await navigator.clipboard.writeText(gifUrl)
-			setShowToast(true);
+			alert("Your Gif has been copied!");
 		} catch (error) {
 			// Unable to copy gif URL
 		}
 	}
 
 	return (
-		<div className={gifCardClasses}>
-			<div 
-			className='rounded overflow-hidden w-100 d-flex align-items-center' 
+		<div style={{ display: "flex" }}>
+			<div
 			style={{
+				display: "flex",
+				width: "100%",
+				overflow: "hidden", 
+				borderRadius: "10px",
 				position: "relative", 
 				backgroundColor: "black"
 			}}>
@@ -46,28 +48,14 @@ function GifCard ({
 					<button  
 						title="Copy Gif"
 						type="button" 
-						className='btn btn-outline-light btn-sm text-white' 
-						style={{ backgroundColor: "rgba(10, 10, 10, .5)"}} 
+						className='btn-outline-white'
+						style={{ backgroundColor: "rgba(10, 10, 10, .5)" }} 
 						onClick={() => copyGif(gifModel.web_url)}
 					>
-						<i className='bi bi-copy'></i>
+						Copy
 					</button>
 				</div>
 			</div>
-
-			<ToastContainer position="bottom-center" className='my-3'>
-				<Toast 
-					show={showToast} 
-					delay={3000} 
-					autohide 
-					onClose={() => setShowToast(false)}
-					bg='success'
-				>
-					<Toast.Body>
-						<div className='text-center text-white'>Your Gif has been copied!</div>
-					</Toast.Body>
-				</Toast>
-			</ToastContainer>
 		</div>
 	)
 }
