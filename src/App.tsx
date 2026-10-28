@@ -97,7 +97,7 @@ function Home() {
 	// MARK: START RETURN 
   return (
     <>
-			<main style={{ maxWidth: "1000px", margin: "0 auto", paddingTop: "1rem", paddingBottom: "2rem"}}>	
+			<main style={{ maxWidth: "1000px", margin: "0 auto", padding: "1.5rem", paddingTop: ".75rem"}}>	
 				<h3 style={{ color: "#bababa" }}>Hi There! 👋</h3>
 				<h1>Welcome to Gif Picker</h1>
 
@@ -139,7 +139,7 @@ function Home() {
 								style={{
 									display: "grid", 
 									gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-									gap: "15px"
+									gap: "1rem"
 								}}
 							>
 								{
