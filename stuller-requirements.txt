@@ -26,15 +26,15 @@ Features are listed in priority, some are more difficult than others. Accomplish
 many as you feel comfortable.
 
 2a. Core
-- A user should have a clear way to search for GIFs. ✅
-- A user should be able to search for gifs through the URL. ✅
-- A user should be able to easily copy the GIF URL to a chat program. ✅
+- A user should have a clear way to search for GIFs.
+- A user should be able to search for gifs through the URL.
+- A user should be able to easily copy the GIF URL to a chat program.
 
 2b. Nice to Have
-- Implementation is built using Typescript. ✅
-- An alert is shown once a GIF URL is copied. ✅
-- A user should get results shortly after they're finished typing. ✅
-- A user should be able to cycle through many GIFs for each search query. ✅
+- Implementation is built using Typescript.
+- An alert is shown once a GIF URL is copied.
+- A user should get results shortly after they're finished typing.
+- A user should be able to cycle through many GIFs for each search query.
 - A user should be alerted when the API limit is reached.
 - A user should be able to see previous results even after the API limit is reached.
-- A user should be able to see 3 random gifs before searching. ✅
+- A user should be able to see 3 random gifs before searching.
