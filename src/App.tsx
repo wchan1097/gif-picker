@@ -97,7 +97,7 @@ function Home() {
 	// MARK: START RETURN 
   return (
     <>
-			<main style={{ maxWidth: "1000px", margin: "0 auto", padding: "1.5rem", paddingTop: ".75rem"}}>	
+			<main style={{ maxWidth: "1000px", margin: "0 auto", padding: "1.5rem", paddingTop: ".75rem", paddingBottom: "2.5rem" }}>	
 				<h3 style={{ color: "#bababa" }}>Hi There! 👋</h3>
 				<h1>Welcome to Gif Picker</h1>
 
