@@ -6,6 +6,8 @@
 body {
 	background-image: linear-gradient(to bottom right, #303c4c 35%, #010102);
 	min-height: 100vh;
+	padding: 0;
+	margin: 0;;
 }
 
 p, h1, h2, h3, h4, h5, h6 {

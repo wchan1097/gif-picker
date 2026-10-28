@@ -29,6 +29,7 @@ export async function fetchQueryGifs(
 
 		const data = await response.json();
 
+		if (data.meta.status !== 200) throw data.meta.msg;
 		if (!data.data) return [];
 
 		gifs = data.data;
@@ -61,6 +62,8 @@ export async function fetchRandomGifs(
 			);
 
 			const data = await response.json();
+
+			if (data.meta.status !== 200) throw data.meta.msg;
 
 			randomGifs.push(data.data);
 		} catch (error) {
